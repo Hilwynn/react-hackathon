@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Head from "next/head";
+import ProductCard from "../../components/ProductCard";
 import API from "../../helpers/API";
-import StarRating from "../../components/StarRating";
 import { objectToArray } from "../../helpers/functions";
 
 const ProductList = () => {
@@ -51,36 +50,11 @@ const ProductList = () => {
       ) : (
         <ul className="product-list">
           {products.map(product => (
-            <li key={product.id}>
-              <div className="product-card">
-                <img
-                  src={product.images[0].src.small}
-                  alt={product.images[0].alt}
-                />
-
-                <h2>
-                  <Link href={`/products/${product.id}`}>
-                    <a>{product.name}</a>
-                  </Link>
-                </h2>
-
-                <div className="product-info">
-                  <p className="product-description">{product.description}</p>
-                  <div className="product-details">
-                    <div className="product-details-price">
-                      <p>€ {product.price}</p>
-                    </div>
-                    <div className="product-details-info">
-                      <StarRating rating={product.rating} />
-                      <p>{product.stock} in stock</p>
-                    </div>
-                  </div>
-                </div>
-                <button onClick={() => handleAddToCart(product)}>
-                  Add to cart
-                </button>
-              </div>
-            </li>
+            <ProductCard
+              key={product.id}
+              handleAddToCart={handleAddToCart}
+              product={product}
+            />
           ))}
         </ul>
       )}
