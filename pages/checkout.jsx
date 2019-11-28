@@ -14,10 +14,10 @@ const Cart = () => {
 
     // if (productInCart) {
     //   cart.map(productInCart => {
-    //     if (product.id === productInCart.id) return (productInCart.amount += 1);
+    //     if (product.id === productInCart.id) return (productInCart.quantity += 1);
     //   });
     // } else {
-    //   product.amount = 1;
+    //   product.quantity = 1;
     //   cart = [...cart, product];
     // }
 
@@ -29,23 +29,36 @@ const Cart = () => {
   return (
     <div>
       <h1>Checkout</h1>
-      <ul className="checkout-basket">
-        {cart.length > 0 &&
-          cart.map(item => (
-            <li>
-              <img src={item.images[0].src.small} alt={item.images[0].alt} />
-              <p>{item.name}</p>{" "}
-              <p className="checkout-basket-quantity">{item.amount}</p>
-            </li>
-          ))}
-      </ul>
+      {cart.length === 0 ? (
+        <div>Your cart is empty</div>
+      ) : (
+        <>
+          <ul className="checkout-basket">
+            {cart.length > 0 &&
+              cart.map(item => (
+                <li>
+                  <img
+                    src={item.images[0].src.small}
+                    alt={item.images[0].alt}
+                  />
+                  <p className="checkout-basket-name">{item.name}</p>
+                  <div className="checkout-basket-price">
+                    <p>€ {item.price}</p>
+                    <p className="checkout-basket-quantity">{item.quantity}</p>
+                  </div>
+                </li>
+              ))}
+          </ul>
 
-      <button
-        className="checkout-order-button"
-        onClick={() => setOrderPlaced(!orderPlaced)}
-      >
-        Place your order
-      </button>
+          <button
+            className="checkout-order-button"
+            onClick={() => setOrderPlaced(!orderPlaced)}
+          >
+            Place your order
+          </button>
+        </>
+      )}
+
       {orderPlaced && (
         <div className="checkout-order-placed">🎉 Order placed! 🎉</div>
       )}

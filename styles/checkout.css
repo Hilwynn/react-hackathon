@@ -19,10 +19,18 @@
 .checkout-basket li img {
   margin-right: 1rem;
   width: 100px;
+  height: 56.25px;
+  object-fit: cover;
 }
 
 .checkout-basket p {
   margin-bottom: 0;
+}
+
+.checkout-basket-price {
+  align-items: center;
+  display: flex;
+  margin-left: 1rem;
 }
 
 .checkout-basket-quantity {
@@ -57,5 +65,17 @@
 @media (max-width: 375px) {
   .checkout-order-placed {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .checkout-basket li {
+    flex-flow: row wrap;
+  }
+
+  .checkout-basket .checkout-basket-name {
+    order: -1;
+    margin-bottom: 1rem;
+    width: 100%;
   }
 }
