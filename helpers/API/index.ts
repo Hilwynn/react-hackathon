@@ -6,8 +6,6 @@ const client = axios.create({
 });
 
 class API {
-  token?: string;
-
   buildPath(url: string): string {
     return `${url}.json`;
   }
