@@ -32,7 +32,6 @@ const ProductCard: React.FC<ProductCard> = ({ handleAddToCart, product }) => (
       </h2>
 
       <div className="product-info">
-        <p className="product-description">{product.description}</p>
         <div className="product-details">
           <div className="product-details-price">
             <p>€ {product.price}</p>

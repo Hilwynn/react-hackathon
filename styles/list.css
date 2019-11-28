@@ -9,10 +9,10 @@
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
-  height: 445px;
+  height: 380px;
   margin: 0.5rem;
-  max-width: 290px;
   overflow: hidden;
+  width: 290px;
 }
 
 .product-card img {
@@ -24,8 +24,12 @@
 
 .product-card h2 {
   flex-grow: 1;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .product-card p {
@@ -34,6 +38,7 @@
 
 .product-card a {
   color: darkslategrey;
+  font-size: 1.25rem;
 }
 
 .product-info {
