@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Router from "next/router";
-import API from "../../helpers/API";
+import API from "../../shared/helpers/API";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);

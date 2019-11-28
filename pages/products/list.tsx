@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import ProductCard from "../../components/ProductCard";
-import API from "../../helpers/API";
-import { objectToArray } from "../../helpers/functions";
+import API from "../../shared/helpers/API";
+import { objectToArray } from "../../shared/helpers/functions";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
