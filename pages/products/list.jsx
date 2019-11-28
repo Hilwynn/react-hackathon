@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import axios from "axios";
+import API from "../../helpers/API";
 
 /**
  * This is how you can link to a productDetail:
@@ -19,9 +19,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(
-          "https://was-react-hackathon-fall-2019.firebaseio.com/products.json"
-        );
+        const { data } = await API.get("products");
         console.log(data);
 
         const dataArray = Object.keys(data).map(key => {

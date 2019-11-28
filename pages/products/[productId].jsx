@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Router from "next/router";
-import axios from "axios";
+import API from "../../helpers/API";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
@@ -11,9 +11,7 @@ const ProductDetail = () => {
       const { productId } = Router.query;
 
       try {
-        const { data } = await axios.get(
-          `https://was-react-hackathon-fall-2019.firebaseio.com/products/${productId}.json`
-        );
+        const { data } = await API.get(`products/${productId}`);
         console.log(data);
 
         setProduct(data);
