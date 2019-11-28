@@ -58,9 +58,11 @@ const ProductList = () => {
     <div>
       <h1>Products</h1>
 
-      <ul className="product-list">
-        {products.length > 0 &&
-          products.map(product => (
+      {products.length === 0 ? (
+        <div>Loading...</div>
+      ) : (
+        <ul className="product-list">
+          {products.map(product => (
             <li key={product.id}>
               <div className="product-card">
                 <img
@@ -92,7 +94,8 @@ const ProductList = () => {
               </div>
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </div>
   );
 };
