@@ -2,16 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import API from "../../helpers/API";
-
-/**
- * This is how you can link to a productDetail:
- * href: is the link you want the user to be sent to
- * as: is how you want the url to look like
- *
- * <Link href="" as="">
- *   <a>Place link text here</a>
- * </Link>
- * */
+import { objectToArray } from "../../helpers/functions";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -20,13 +11,8 @@ const ProductList = () => {
     const fetchData = async () => {
       try {
         const { data } = await API.get("products");
-        console.log(data);
 
-        const dataArray = Object.keys(data).map(key => {
-          return data[key];
-        });
-
-        setProducts(dataArray);
+        setProducts(objectToArray(data));
       } catch (error) {
         console.log(error);
       }
