@@ -1,0 +1,26 @@
+.product-detail {
+  display: flex;
+}
+
+.product-detail-rating {
+  margin-bottom: 2rem;
+}
+
+.product-detail-image {
+  max-width: 400px;
+  min-width: 50%;
+}
+
+.product-detail-image img {
+  display: block;
+  width: 100%;
+}
+
+.product-detail-info {
+  padding: 0 1rem;
+}
+
+.product-detail-price {
+  color: darkslategrey;
+  font-size: 2rem;
+}
