@@ -2,23 +2,10 @@ import React from "react";
 import Link from "next/link";
 import StarRating from "./StarRating";
 
-type Product = {
-  description: string;
-  id: number;
-  images: {
-    alt: string;
-    src: { large: string; medium: string; small: string };
-  }[];
-  name: string;
-  price: number;
-  rating: number;
-  stock: number;
-};
-
-type ProductCard = {
+interface ProductCard {
   handleAddToCart: (Product) => void;
   product: Product;
-};
+}
 
 const ProductCard: React.FC<ProductCard> = ({ handleAddToCart, product }) => (
   <li>

@@ -15,12 +15,5 @@
     "jsx": "preserve"
   },
   "exclude": ["node_modules"],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/checkout.jsx",
-    "pages/products/[productId].jsx",
-    "pages/products/list.tsx"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "shared/types/index.d.ts"]
 }
