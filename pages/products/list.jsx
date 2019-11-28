@@ -44,10 +44,11 @@ const ProductList = () => {
 
     if (productInCart) {
       cart.map(productInCart => {
-        if (product.id === productInCart.id) return (productInCart.amount += 1);
+        if (product.id === productInCart.id)
+          return (productInCart.quantity += 1);
       });
     } else {
-      product.amount = 1;
+      product.quantity = 1;
       cart = [...cart, product];
     }
 
