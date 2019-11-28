@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import API from "../../helpers/API";
+import StarRating from "../../components/StarRating";
 import { objectToArray } from "../../helpers/functions";
 
 const ProductList = () => {
@@ -70,7 +71,7 @@ const ProductList = () => {
                       <p>€ {product.price}</p>
                     </div>
                     <div className="product-details-info">
-                      <p>{product.rating} ⭐</p>
+                      <StarRating rating={product.rating} />
                       <p>{product.stock} in stock</p>
                     </div>
                   </div>
