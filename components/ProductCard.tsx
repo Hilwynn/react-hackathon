@@ -3,7 +3,7 @@ import Link from "next/link";
 import StarRating from "./StarRating";
 
 interface ProductCard {
-  handleAddToCart: (Product) => void;
+  handleAddToCart: (product: Product) => void;
   product: Product;
 }
 
